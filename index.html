@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Titlemanager by Puharesource</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Titlemanager</h1>
+      <h2 class="project-tagline">Adds hovering titles, actionbar titles and tabmenu titles to your Minecraft 1.8 server.</h2>
+      <a href="https://github.com/Puharesource/TitleManager" class="btn">View on GitHub</a>
+      <a href="https://github.com/Puharesource/TitleManager/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Puharesource/TitleManager/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="titlemanager" class="anchor" href="#titlemanager" aria-hidden="true"><span class="octicon octicon-link"></span></a>TitleManager</h1>
+
+<p><strong>TitleManager</strong> adds floating messages and a header/footer for your tabmenu. <em>TitleManager</em> also provides you with a rich API, that you can use in your plugins.</p>
+
+<h4>
+<a id="wiki" class="anchor" href="#wiki" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/Puharesource/TitleManager/wiki">Wiki</a>
+</h4>
+
+<ul>
+<li><a href="https://github.com/Puharesource/TitleManager/wiki/commands">Commands</a></li>
+<li><a href="https://github.com/Puharesource/TitleManager/wiki/permissions">Permissions</a></li>
+<li><a href="http://www.spigotmc.org/resources/titlemanager.1049/">Download / Forums</a></li>
+</ul>
+
+<h2>
+<a id="the-api" class="anchor" href="#the-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>The API</h2>
+
+<h2>
+<a id="using-titlemanager" class="anchor" href="#using-titlemanager" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using TitleManager</h2>
+
+<p><em>To use TitleManager within your plugin, make sure to have done the following.</em>
+First add TitleManager-X.X.X.jar to your build path. Then, add TitleManager as a dependency to your plugin.yml file:</p>
+
+<div class="highlight highlight-yml"><pre><span class="pl-s"><span class="pl-ent">depend:</span> <span class="pl-s">[TitleManager]</span></span></pre></div>
+
+<p>Alternatively, you can add as a soft dependency <code>softdepend: [TitleManager]</code> if you can live without it.
+Another alternative would be to check for the plugin within <code>onEnable()</code> inside of your Main class:</p>
+
+<div class="highlight highlight-java"><pre>@<span class="pl-smi">Override</span>
+<span class="pl-k">public</span> <span class="pl-k">void</span> onEnable() {
+  <span class="pl-k">if</span> (getServer()<span class="pl-k">.</span>getPluginManager()<span class="pl-k">.</span>getPlugin(<span class="pl-s"><span class="pl-pds">"</span>TitleManager<span class="pl-pds">"</span></span>) <span class="pl-k">!=</span> <span class="pl-c1">null</span> <span class="pl-k">&amp;&amp;</span> getServer()<span class="pl-k">.</span>getPluginManager()<span class="pl-k">.</span>getPlugin(<span class="pl-s"><span class="pl-pds">"</span>TitleManager<span class="pl-pds">"</span></span>)<span class="pl-k">.</span>isEnabled())
+    getLogger()<span class="pl-k">.</span>info(<span class="pl-s"><span class="pl-pds">"</span>Successfully hooked into TitleManager!<span class="pl-pds">"</span></span>);
+  <span class="pl-k">else</span> {
+    getLogger()<span class="pl-k">.</span>warning(<span class="pl-s"><span class="pl-pds">"</span>Failed to hook into TitleManager, disabling plugin!<span class="pl-pds">"</span></span>);
+    getPluginLoader()<span class="pl-k">.</span>disablePlugin(<span class="pl-v">this</span>);
+  }
+}</pre></div>
+
+<p>Now you should be good to go and ready to use the API inside of your plugins!</p>
+
+<h3>
+<a id="the-objects" class="anchor" href="#the-objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Objects</h3>
+
+<p><strong>TitleManager</strong> provides you with three objects, one being <code>TitleObject.java</code> which controls everything to do with the floating messages on your screen, and the second being <code>TabTitleObject.java</code> which controls everything to do with the header and footer on the Tabmenu (aka the playerlist) and last but not least <code>ActionbarTitleObject.java</code> which controls everything to do with Actionbar titles, like sending an actionbar title.</p>
+
+<ul>
+<li><a href="https://github.com/Puharesource/TitleManager/wiki/api-title">Title Object</a></li>
+<li><a href="https://github.com/Puharesource/TitleManager/wiki/api-tab">Tabmenu Object</a></li>
+<li><a href="https://github.com/Puharesource/TitleManager/wiki/api-actionbar">Actionbar Title Object</a></li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Puharesource/TitleManager">Titlemanager</a> is maintained by <a href="https://github.com/Puharesource">Puharesource</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
